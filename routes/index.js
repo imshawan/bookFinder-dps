@@ -5,12 +5,8 @@ var bookController = require('../controllers/mongo')
 /* GET home books. */
 router.get('/books', bookController.getBooks);
 
-router.post('/findBooks', function(req, res, next) {
-  
-});
+router.post('/findBooks');
 
-router.post('/addBooks', function(req, res, next) {
-  
-});
+router.post('/addBooks', bookController.addBooks);
 
 module.exports = router;
