@@ -70,10 +70,10 @@ const AddBooks = () => {
             <section>
             {isLoading ? '' : (
                 Response ? (
-                    <div class="rt-container">
-                        <div class="col-rt-12">
-                            <div class="Scriptcontent">
-                                <div id='cardss' class="animated fadeIn">
+                    <div className="rt-container">
+                        <div className="col-rt-12">
+                            <div className="Scriptcontent">
+                                <div id='cardss' className="animated fadeIn">
                                 <div id='upper-side' className="success">
                                 <img src={Checked} alt="Success"/>
                                     <h3 id='status'>
@@ -91,10 +91,10 @@ const AddBooks = () => {
                         </div>
                     </div>
                 ) : (
-                    <div class="rt-container">
-                        <div class="col-rt-12">
-                            <div class="Scriptcontent">
-                                <div id='cardss' class="animated fadeIn">
+                    <div className="rt-container">
+                        <div className="col-rt-12">
+                            <div className="Scriptcontent">
+                                <div id='cardss' className="animated fadeIn">
                                 <div id='upper-side' className="failed">
                                 <img src={Cancel} alt="Failed"/>
                                     <h3 id='status'>

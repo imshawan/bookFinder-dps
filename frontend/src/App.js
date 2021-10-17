@@ -6,6 +6,7 @@ import Books from './components/bookComponent';
 import Homepage from './components/homeComponent';
 import Aboutpage from './components/aboutComponent';
 import AddBooks from './components/addBooks';
+import Search from './components/searchComponent';
 
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
@@ -57,6 +58,7 @@ class App extends Component {
           <Route path="/about" exact component={Aboutpage} />
           <Route path="/books" component={Books} />
           <Route path="/addBooks" component={AddBooks} />
+          <Route path="/search" component={Search} />
         </Switch>
       </Router>
       </div>
