@@ -23,3 +23,14 @@ exports.validateBooks = (req, res, next) => {
         next();
     }
 }
+
+exports.validateSearch = (req, res, next) => {
+    if (!req.body.tags){
+        res.statusCode = 400;
+        res.setHeader('Content-Type', 'application/json');
+        res.json({success: false, message: "No tags were entered in query"});
+    }
+    else {
+        next();
+    }
+}
