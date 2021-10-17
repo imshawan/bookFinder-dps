@@ -29,24 +29,24 @@ class App extends Component {
       <Router>
         <Navbar dark color="dark" expand="md">
           <div className="container">
-            <NavbarBrand href="/"><h2>Book Finder App</h2></NavbarBrand>
+            <NavbarBrand href="/"><h1>Book Finder</h1></NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                    <NavLink href="/"><h6>Home</h6></NavLink>
+                    <NavLink href="/"><h5>Home</h5></NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink href="/about"><h6>About</h6></NavLink>
+                    <NavLink href="/about"><h5>About</h5></NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink href="/books"><h6>View Books</h6></NavLink>
+                    <NavLink href="/books"><h5>View Books</h5></NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink href="/addBooks"><h6>Add Books</h6></NavLink>
+                    <NavLink href="/addBooks"><h5>Add Books</h5></NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink href="/search"><h6>Search</h6></NavLink>
+                    <NavLink href="/search"><h5>Search</h5></NavLink>
                 </NavItem>
               </Nav>
             </Collapse>

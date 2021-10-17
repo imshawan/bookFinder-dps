@@ -20,7 +20,7 @@ const Books = () => {
     return(
         <div>
             <header className="w3-container w3-red w3-center" style={{padding:'40px 16px'}}>
-                <h2 className="w3-margin w3-jumbo">View all books.</h2>
+                <h2 className="w3-margin w3-jumbo">Viewing all books.</h2>
             </header>
             <div className="container mt-5">
                 <div className="row">

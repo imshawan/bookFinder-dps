@@ -35,10 +35,11 @@ body{
   background: linear-gradient(to right, rgba(52, 58, 64, 0.8), #b1b1b1);
   margin: 0px auto;
   border: 2px solid #343a40;
+  transition: .3s;
 }
 
 .card-view:hover {
-  box-shadow: rgba(0, 0, 0, 0.2) 2px 15px 15px;
+  box-shadow: rgba(63, 46, 46, 0.2) 12px 15px 15px;
 }
 
 .main-content{
