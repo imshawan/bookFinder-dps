@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { Navbar, NavbarBrand } from 'reactstrap';
 import { Component } from 'react';
+import Menu from './components/bookComponent';
 
 class App extends Component {
  render() {
@@ -12,6 +13,7 @@ class App extends Component {
             <NavbarBrand href="/">Book Finder App</NavbarBrand>
           </div>
         </Navbar>
+        <Menu />
       </div>
     );
   }
