@@ -10,7 +10,7 @@ const Books = () => {
       }, []);
 
     const getBooks = async () => {
-        const response = await fetch(`http://localhost:3001/api/books`);
+        const response = await fetch(`https://bookfinder-dps.herokuapp.com/api/books`);
         const data = await response.json();
         setBooks(data)
         setisLoading(false)

@@ -9,10 +9,10 @@ const Search = () => {
 
     useEffect(() => {
         const SearchForBooks = async () => {
-            const resp = await fetch(`http://localhost:3001/api/findBooks`, {
+            const resp = await fetch(`https://bookfinder-dps.herokuapp.com/api/findBooks`, {
                 method: 'POST',
                 headers: {
-                    'Origin': '*',
+                    'Origin': 'https://bookfinder-dps.netlify.app',
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
                 },

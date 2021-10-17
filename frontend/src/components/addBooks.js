@@ -28,10 +28,10 @@ const AddBooks = () => {
         "tags": tags
         }
 
-        const res = await fetch(`http://localhost:3001/api/addBooks`, {
+        const res = await fetch(`https://bookfinder-dps.herokuapp.com/api/addBooks`, {
             method: 'POST',
             headers: {
-                'Origin': '*',
+                'Origin': 'https://bookfinder-dps.netlify.app',
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
             },
