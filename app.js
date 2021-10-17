@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const config = require('./config.json');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 var indexRouter = require('./routes/index');
 
@@ -15,6 +16,8 @@ connect.then((db) => {
   console.log(`Connected to the database`);
 }, (err) => {console.log(err)});
 
+//cors for browser to browser communication
+app.use(cors({ origin: "*" }));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
