@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from 'react-hook-form';
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Cancel from '../pngs/cancel.png'
 import Checked from '../pngs/checked.png'
 
@@ -12,7 +12,6 @@ const AddBooks = () => {
     const {
     register,
     handleSubmit,
-    formState: { errors },
     } = useForm();
 
     const onSubmit1 = async (data) => {
@@ -76,7 +75,7 @@ const AddBooks = () => {
                             <div class="Scriptcontent">
                                 <div id='cardss' class="animated fadeIn">
                                 <div id='upper-side' className="success">
-                                <img src={Checked}/>
+                                <img src={Checked} alt="Success"/>
                                     <h3 id='status'>
                                     Success
                                     </h3>
@@ -97,7 +96,7 @@ const AddBooks = () => {
                             <div class="Scriptcontent">
                                 <div id='cardss' class="animated fadeIn">
                                 <div id='upper-side' className="failed">
-                                <img src={Cancel}/>
+                                <img src={Cancel} alt="Failed"/>
                                     <h3 id='status'>
                                     Failed
                                     </h3>
