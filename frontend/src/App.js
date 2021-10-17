@@ -1,19 +1,55 @@
 import logo from './logo.svg';
 import './App.css';
-import { Navbar, NavbarBrand } from 'reactstrap';
+import { Navbar, NavbarBrand, NavLink, NavItem, NavbarToggler, Collapse, Nav } from 'reactstrap';
 import { Component } from 'react';
-import Menu from './components/bookComponent';
+import Books from './components/bookComponent';
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
  render() {
     return (
       <div className="App">
-        <Navbar dark color="primary">
+      <Router>
+        <Navbar dark color="dark" expand="md">
           <div className="container">
-            <NavbarBrand href="/">Book Finder App</NavbarBrand>
-          </div>
+            <NavbarBrand href="/"><h2>Book Finder App</h2></NavbarBrand>
+            <NavbarToggler onClick={this.toggle} />
+            <Collapse isOpen={this.state.isOpen} navbar>
+              <Nav className="ml-auto" navbar>
+                <NavItem>
+                    <NavLink href="/"><h6>Home</h6></NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink href="/books"><h6>View Books</h6></NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink href="/addBooks"><h6>Add Books</h6></NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink href="/search"><h6>Search</h6></NavLink>
+                </NavItem>
+              </Nav>
+            </Collapse>
+            </div>
         </Navbar>
-        <Menu />
+        <Switch>
+          <Route path="/" exact component={Books} />
+          <Route path="/books" component={Books} />
+        </Switch>
+      </Router>
       </div>
     );
   }
