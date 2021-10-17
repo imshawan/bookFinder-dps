@@ -4,6 +4,7 @@ import { Navbar, NavbarBrand, NavLink, NavItem, NavbarToggler, Collapse, Nav } f
 import { Component } from 'react';
 import Books from './components/bookComponent';
 import Homepage from './components/homeComponent';
+import Aboutpage from './components/aboutComponent';
 
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
@@ -35,6 +36,9 @@ class App extends Component {
                     <NavLink href="/"><h6>Home</h6></NavLink>
                 </NavItem>
                 <NavItem>
+                    <NavLink href="/about"><h6>About</h6></NavLink>
+                </NavItem>
+                <NavItem>
                     <NavLink href="/books"><h6>View Books</h6></NavLink>
                 </NavItem>
                 <NavItem>
@@ -49,6 +53,7 @@ class App extends Component {
         </Navbar>
         <Switch>
           <Route path="/" exact component={Homepage} />
+          <Route path="/about" exact component={Aboutpage} />
           <Route path="/books" component={Books} />
         </Switch>
       </Router>
