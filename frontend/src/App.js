@@ -5,6 +5,7 @@ import { Component } from 'react';
 import Books from './components/bookComponent';
 import Homepage from './components/homeComponent';
 import Aboutpage from './components/aboutComponent';
+import AddBooks from './components/addBooks';
 
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
@@ -55,6 +56,7 @@ class App extends Component {
           <Route path="/" exact component={Homepage} />
           <Route path="/about" exact component={Aboutpage} />
           <Route path="/books" component={Books} />
+          <Route path="/addBooks" component={AddBooks} />
         </Switch>
       </Router>
       </div>
