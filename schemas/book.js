@@ -11,7 +11,7 @@ const bookSchema = new Schema({
         default: '',
     },
     pub_date: {
-        type: string,
+        type: String,
         default: ''
     },
     tags: {
