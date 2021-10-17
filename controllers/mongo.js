@@ -19,6 +19,7 @@ exports.addBooks = (req, res, next) => {
             res.statusCode = 400;
             res.setHeader('Content-Type', 'application/json');
             res.json({success: false, message: "Book entry already exists! You cannot enter duplicate values.", book: book});
+            return;
         }
     })
 
