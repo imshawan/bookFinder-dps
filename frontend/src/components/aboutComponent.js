@@ -5,7 +5,7 @@ const Aboutpage = () => {
     return(
         <div style={{margin: '0px auto'}}>
             <header className="w3-container w3-red w3-center" style={{padding:'40px 16px'}}>
-                <h1 className="w3-margin w3-jumbo">About.</h1>
+                <h2 className="w3-margin w3-jumbo">About.</h2>
             </header>
             
             <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
