@@ -3,6 +3,8 @@ import './App.css';
 import { Navbar, NavbarBrand, NavLink, NavItem, NavbarToggler, Collapse, Nav } from 'reactstrap';
 import { Component } from 'react';
 import Books from './components/bookComponent';
+import Homepage from './components/homeComponent';
+
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 class App extends Component {
@@ -46,7 +48,7 @@ class App extends Component {
             </div>
         </Navbar>
         <Switch>
-          <Route path="/" exact component={Books} />
+          <Route path="/" exact component={Homepage} />
           <Route path="/books" component={Books} />
         </Switch>
       </Router>
