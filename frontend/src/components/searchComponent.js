@@ -8,22 +8,24 @@ const Search = () => {
     const [search, setSearch] = useState('');
 
     useEffect(() => {
+        const SearchForBooks = async () => {
+            const resp = await fetch(`http://localhost:3001/api/findBooks`, {
+                method: 'POST',
+                headers: {
+                    'Origin': '*',
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({"tags": query})
+            });
+            const data = await resp.json();
+            if (data.books) { 
+                setBooks(data.books)
+                setisLoading(false)
+            }  
+        }
         SearchForBooks();
       }, [query]);
-
-    const SearchForBooks = async () => {
-        const resp = await fetch(`http://localhost:3001/api/findBooks`, {
-            method: 'POST',
-            headers: {
-                'Origin': '*',
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({"tags": query})
-        });
-        const data = await resp.json();
-        if (data.books) {setBooks(data.books); setisLoading(false);}  
-    }
 
     const updateSearch = e => {
         setSearch(e.target.value);
@@ -37,7 +39,7 @@ const Search = () => {
 
     return(
         <div>
-           <header className="w3-container w3-red w3-center" style={{padding:'40px 16px'}}>
+            <header className="w3-container w3-red w3-center" style={{padding:'40px 16px'}}>
                 <h3 className="w3-margin w3-jumbo">Search for Books.</h3>
             </header>
 

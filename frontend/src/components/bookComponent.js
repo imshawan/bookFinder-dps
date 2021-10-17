@@ -6,7 +6,6 @@ const Books = () => {
     const [isLoading, setisLoading] = useState(true);
 
     useEffect(() => {
-        console.log("effect has been run");
         getBooks();
       }, []);
 
