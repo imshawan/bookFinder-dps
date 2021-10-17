@@ -15,7 +15,7 @@ const bookSchema = new Schema({
         default: ''
     },
     tags: {
-        type: Array,
+        type: [String],
         default: []
     }
 },{

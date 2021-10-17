@@ -34,3 +34,16 @@ exports.addBooks = (req, res, next) => {
         res.json({success: false, message: "Something went wrong, please try again.", error: err});
     })
 }
+
+exports.findBooks = (req, res, next) => {
+    Books.find({ tags: req.body.tags }, (err, books) => {
+        if (err) {
+            next(err)
+        }
+        else {
+            res.statusCode = 200;
+            res.setHeader('Content-Type', 'application/json');
+            res.json({success: true, books: books});
+        }
+    })
+}

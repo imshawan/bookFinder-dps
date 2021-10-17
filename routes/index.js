@@ -6,7 +6,7 @@ var validateBooks = require('../validators/bookValidator').validateBooks;
 /* GET home books. */
 router.get('/books', bookController.getBooks);
 
-router.post('/findBooks');
+router.post('/findBooks', bookController.findBooks);
 
 router.post('/addBooks', validateBooks, bookController.addBooks);
 
