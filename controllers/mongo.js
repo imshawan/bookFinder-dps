@@ -19,20 +19,20 @@ exports.addBooks = (req, res, next) => {
             res.statusCode = 400;
             res.setHeader('Content-Type', 'application/json');
             res.json({success: false, message: "Book entry already exists! You cannot enter duplicate values.", book: book});
-            return;
         }
-    })
+        else {
+            Books.create(req.body)
+            .then((book) => {
+                res.statusCode = 200;
+                res.setHeader('Content-Type', 'application/json');
+                res.json({success: true, message: "Book information was saved successfully.", book: book});
 
-    Books.create(req.body)
-    .then((book) => {
-        res.statusCode = 200;
-        res.setHeader('Content-Type', 'application/json');
-        res.json({success: true, message: "Book information was saved successfully.", book: book});
-
-    }, err => {
-        res.statusCode = 400;
-        res.setHeader('Content-Type', 'application/json');
-        res.json({success: false, message: "Something went wrong, please try again.", error: err});
+            }, err => {
+                res.statusCode = 400;
+                res.setHeader('Content-Type', 'application/json');
+                res.json({success: false, message: "Something went wrong, please try again.", error: err});
+            })
+        }
     })
 }
 
