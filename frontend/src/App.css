@@ -37,7 +37,17 @@ body{
   border: 2px solid #343a40;
   transition: .3s;
 }
-
+.card {
+  height: 14rem;
+  width: 20rem;
+  border: none;
+}
+.card-body {
+  overflow: hidden;
+}
+.card-body p i {
+  font-size: small;
+}
 .card-view:hover {
   box-shadow: rgba(63, 46, 46, 0.2) 12px 15px 15px;
 }

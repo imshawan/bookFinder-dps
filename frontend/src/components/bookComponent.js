@@ -27,11 +27,12 @@ const Books = () => {
                         {isLoading ? (<h3 className='loader' style={{margin: '0px auto'}}>Loading, Please wait...</h3>) : (
                             books.map((book, index) => (
                                 <div className="col-auto mb-5 card-view">
-                                    <div key={index} className="card" style={{width: '20rem', height: '12rem', border: 'none'}}>
+                                    <div key={index} className="card">
                                         <div class="card-body">
                                             <h4 class="card-title mt-3">{book.title}</h4>
                                             <h6 class="card-subtitle mb-2 text-muted">By {book.author}</h6>
-                                            <p class="card-text mt-4">Publishing date: {book.pub_date}</p>
+                                            <p class="card-text mt-4"><strong>Publishing date: {book.pub_date}</strong></p>
+                                            <p><i>Tags: {book.tags ? (book.tags.map(t => (<span>{t}, </span>))) : ''}</i></p>
                                         </div>
                                     </div>
                                 </div>
