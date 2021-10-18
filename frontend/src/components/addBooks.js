@@ -12,6 +12,7 @@ const AddBooks = () => {
     const {
     register,
     handleSubmit,
+    formState: { errors },
     } = useForm();
 
     const onSubmit1 = async (data) => {
@@ -21,6 +22,9 @@ const AddBooks = () => {
         const tagsBox = data.tags
 
         const tags = tagsBox.split(',')
+        
+        if (tags.length > 4) {alert("Only 4 tags max is allowed"); return;}
+
         const data1 = {
         "title": titleBox,
         "author": authorBox,
@@ -59,11 +63,15 @@ const AddBooks = () => {
             <div id="main-content" className="main-content mt-5">
                 <div className="add-books" style={{display:`${isLoading ? '' : 'none'}`}}>
                     <form className="action-form mt-5" onSubmit={handleSubmit(onSubmit1)}>
-                        <input className="input-content" type="text" placeholder="Enter Title:" id="title" {...register('title', { required: true })} /> {/* register an input */}
+                        <input className="input-content" type="text" placeholder="Enter Title:" id="title" {...register('title', { required: true })} />
+                        {errors.title && <p>Title is required</p>}
                         <input className="input-content" type="text" placeholder="Enter Author:" id="author" {...register('author', { required: true })} />
-                        <input className="input-content" type="text" placeholder="Enter Publish Date:" id="pub_date" {...register('pdate', { required: true })} />
+                        {errors.author && <p>Must enter author name</p>}
+                        <input className="input-content" type="text" placeholder="Enter Publish Date:" id="pub_date" {...register('pub_date', { required: true })} />
+                        {errors.pub_date && <p>Publishing date is required</p>}
                         <input className="input-content" type="text" placeholder="Enter tags: (Separated using a comma)" id="tags" {...register('tags', { required: true })} />
-                        <input className="submit-btn mt-5" type="submit" />
+                        {errors.tags && <p>Atleast one tag is required</p>}
+                        <input className="submit-btn mt-3" type="submit" />
                     </form>
                 </div>
             </div>

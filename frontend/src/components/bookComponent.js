@@ -32,7 +32,7 @@ const Books = () => {
                                             <h4 class="card-title mt-3">{book.title}</h4>
                                             <h6 class="card-subtitle mb-2 text-muted">By {book.author}</h6>
                                             <p class="card-text mt-4"><strong>Publishing date: {book.pub_date}</strong></p>
-                                            <p><i>Tags: {book.tags ? (book.tags.map(t => (<span>{t}, </span>))) : ''}</i></p>
+                                            <p>{book.tags ? (book.tags.map(t => (<span className="tags">{t}</span>))) : ''}</p>
                                         </div>
                                     </div>
                                 </div>

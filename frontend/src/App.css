@@ -51,12 +51,25 @@ body{
 .card-view:hover {
   box-shadow: rgba(63, 46, 46, 0.2) 12px 15px 15px;
 }
-
+.tags {
+  padding-left: 7px;
+  padding-right: 6px;
+  padding-bottom: 2px;
+  background: rgb(201, 201, 201);
+  margin: 7px auto;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 13px;
+  font-family: monospace;
+  margin-left: 4px;
+  hyphens: auto;
+}
 .main-content{
   font-family: sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: .3s;
 }
 
 .add-books{
@@ -77,7 +90,15 @@ body{
 .action-form{
   margin: 25px 18px 35px 20px;
   font-weight: 600;
+  transition: .3s;
 }
+
+.action-form p {
+  color: red;
+  margin-bottom: 0px!important;
+  position: absolute;
+}
+
 .input-content {
   height: 40px;
   display: block;
@@ -89,12 +110,13 @@ body{
   box-shadow: none;
   font-size: 14px;
   margin-left: -3px;
-  margin-top: 15px;
+  margin-top: 36px;
   padding: .675rem .75rem;
+  transition: .3s;
 }
+
 .submit-btn{
-  margin-top: 10px;
-  margin-left: 15%;
+  margin-left: 6%;
   background: rgba(74, 42, 233, 0.7);
   border: 0;
   height: 40px;
@@ -104,6 +126,8 @@ body{
   transition: 0.3s;
   border-radius: 50px;
   font-weight: 600;
+  bottom: 58px;
+  position: absolute;
 }
 .submit-btn:hover{
   background: rgba(74, 42, 233);
