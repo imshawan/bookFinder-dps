@@ -18,7 +18,7 @@ const AddBooks = () => {
     const onSubmit1 = async (data) => {
         const titleBox = data.title
         const authorBox = data.author
-        const pub_date = data.pdate
+        const pub_date = data.pub_date
         const tagsBox = data.tags
 
         const tags = tagsBox.split(',')
