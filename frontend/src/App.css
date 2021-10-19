@@ -70,8 +70,9 @@ body{
   justify-content: center;
   align-items: center;
   transition: .3s;
+  margin-top: 3rem;
 }
-
+  
 .add-books{
   position: relative;
   justify-content: center;
@@ -139,7 +140,7 @@ body{
   height: 450px;
   width: 400px;
   display: block;
-  margin: 40px auto;
+  margin: 0px auto;
   text-align: center;
   font-family: 'Source Sans Pro', sans-serif;
 }
@@ -267,5 +268,20 @@ body{
   .search-bar {
     border: 1px solid #ccc;  
     width: 65%;
+  }
+}
+
+@media (max-width: 700px){
+  .main-content {
+    margin-top: 1.3rem;
+  }
+  .add-books {
+    width: 390px!important;
+  }
+  .rt-container {
+    margin-top: -10px!important;
+  }
+  #cards {
+    width: 364px!important;
   }
 }

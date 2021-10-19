@@ -8,6 +8,7 @@ const AddBooks = () => {
     const [Response, setResponse] = useState(false);
     const [isLoading, setisLoading] = useState(true);
     const [respStatus, setrespStatus] = useState('');
+    const [postData, setpostData] = useState(false);
 
     const {
     register,
@@ -16,6 +17,7 @@ const AddBooks = () => {
     } = useForm();
 
     const onSubmit1 = async (data) => {
+        setpostData(true)
         const titleBox = data.title
         const authorBox = data.author
         const pub_date = data.pub_date
@@ -60,7 +62,7 @@ const AddBooks = () => {
            <header className="w3-container w3-red w3-center" style={{padding:'40px 16px'}}>
                 <h3 className="w3-margin w3-jumbo">Add Books.</h3>
             </header>
-            <div id="main-content" className="main-content mt-5">
+            <div id="main-content" className="main-content">
                 <div className="add-books" style={{display:`${isLoading ? '' : 'none'}`}}>
                     <form className="action-form mt-5" onSubmit={handleSubmit(onSubmit1)}>
                         <input className="input-content" type="text" placeholder="Enter Title:" id="title" {...register('title', { required: true })} />
@@ -72,6 +74,7 @@ const AddBooks = () => {
                         <input className="input-content" type="text" placeholder="Enter tags: (Separated using a comma)" id="tags" {...register('tags', { required: true })} />
                         {errors.tags && <p>Atleast one tag is required</p>}
                         <input className="submit-btn mt-3" type="submit" />
+                        <p id="posting-data" style={{textAlign: 'center', position: 'relative', marginTop: '5px'}}>{postData ? 'Please wait while we upload your data!' : ''}</p>
                     </form>
                 </div>
             </div>
