@@ -49,6 +49,9 @@ class App extends Component {
                 <NavItem>
                     <NavLink href="/search"><h5>Search</h5></NavLink>
                 </NavItem>
+                <NavItem>
+                    <NavLink href="https://github.com/imshawan/bookFinder-dps"><h5>Github</h5></NavLink>
+                </NavItem>
               </Nav>
             </Collapse>
             </div>
